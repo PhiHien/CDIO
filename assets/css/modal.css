@@ -1,0 +1,326 @@
+.modal__booking--info {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.booking__info--room {
+    width: 100%;
+    /* background-color: #000; */
+    margin: 10px 10px 10px 15px;
+    border-radius: 5px solid #000;
+
+}
+
+.room__info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+
+}
+
+.room__icon {
+    width: 230px;
+    height: 66px;
+    background-color: #f2f4f8;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.room__icon--info {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+}
+
+.room__icon i {
+    color: #02AAB0;
+    margin: auto ;
+}
+
+.room__icon--title {
+    font-family: 'Lato';
+    font-weight: 800;
+    margin-left: 10px;
+}
+
+.room__content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.room__content--info {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+    font-weight: 550;
+    font-size: 1.5rem;
+    line-height: 20px;
+    color: #343434;
+}
+
+
+.content--info {
+    opacity: 0.7;
+}
+
+.content--price {
+
+}
+
+.room__status {
+    margin-top: 20px ;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+    font-weight: 550;
+    font-size: 1.5rem;
+    line-height: 20px;
+}
+
+.room__status--info {
+    opacity: 0.7;
+
+}
+
+.room__status--content {
+    color: #02AAB0;
+}
+
+.room__address {
+    margin-top: 20px ;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato';
+    font-weight: 550;
+    font-size: 1.5rem;
+    line-height: 20px;
+    color: #343434;
+}
+
+.room__address--info {
+    opacity: 0.7;
+}
+
+.room__address--content {
+    color: #343434;
+}
+
+.roon__utility {
+    flex:1;
+    margin-top: 20px;
+
+}
+
+.utility {
+    width: 146px;
+}
+
+.utility__info {
+    margin-top: 10px;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.utility__info:first-child
+{
+    margin-bottom: 20px;
+}
+
+.room__utility-info {
+    width: 100px;
+    flex: 1;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    margin-top: 25px;
+}
+
+.room__utility-info:nth-child(3)
+{
+    position: relative;
+    right: 12px;
+}
+
+.utility-info-icon {
+    margin-right: 10px;
+}
+
+.utility-name {
+
+}
+
+
+.booking__info--owner {
+    width: 100%;
+    margin: 10px 30px 15px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 18px;
+}   
+
+.booking__info--user {
+    height: 100%;
+    border-radius: 18px;    
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.booking__info--icon {
+    width: 268px;
+}
+
+.info__owner--content {
+    flex: 1;
+    display: flex;
+    position: relative;
+
+}
+
+.infor--owner {
+    margin: auto;
+    display: flex;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 17px;
+}
+
+.info__owner--content:before {
+    content: '';
+    position: absolute;
+    top: 44px;
+    left: 184px;
+    height: 16px;
+    border: 1px solid #ccc;
+}
+
+.info-sdt {
+    margin-right: 40px;
+}
+
+.booking__info--price {
+    height: 100%;
+    border-radius: 18px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info--price {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.info--since {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}   
+
+.info--since--title {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.info--since--content {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);;
+    border-radius: 10px;
+    position: relative;
+
+
+}
+
+.info--since--icon {
+    font-size: 2rem;
+    position: absolute;
+    right: 54px;
+    bottom: 156px;
+}
+
+.info--expiration--icon {
+    font-size: 2rem;
+    position: absolute;
+    right: 54px;
+    bottom: 84px;
+}
+
+.info--expiration {
+    margin-top: 10px;
+
+}
+
+.booking__buy {
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #FFFFFF;
+    background: linear-gradient(90deg, #0aa1a6 0%, rgb(8 165 166 / 51%) 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.booking__buy:hover {
+    opacity: 1;
+}
+
+.modal__booking--out {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2rem;
+    padding: 4px;
+    cursor: pointer;
+    opacity: 0.5; 
+    color: rgb(2, 170, 176);
+
+}
+
+.modal__booking--out:hover {
+    opacity: 1;
+}
+
+@keyframes modalAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-66px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
