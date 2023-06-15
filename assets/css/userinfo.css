@@ -1,0 +1,211 @@
+#head {
+    width: 100%;
+    overflow: auto;
+    border-bottom: 2px solid black;
+}
+
+.logo {
+    width: 20%;
+    /* background-color: aquamarine; */
+    float: left;
+    box-sizing: border-box;
+    padding: auto;
+    align-items: center;
+}
+
+.date {
+    float: right;
+    width: 15%;
+}
+
+.acount {
+    float: right;
+    width: 15%;
+}
+
+.logoimg {
+    width: 100px;
+    float: left;
+    border: 1px;
+    border-radius: 50%;
+}
+
+.banner {
+    width: 50%;
+    /* background-color: aqua; */
+    float: left;
+    box-sizing: border-box;
+    padding: 30px;
+
+}
+
+/* #head-link {
+    background-color: blue;
+    padding: 10px;
+} */
+
+.headtag {
+    background-color: aqua;
+}
+
+.iconinfor-left {
+    float: left;
+    height: 30px;
+}
+
+.content-table {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.menu-table {
+    border: 3px solid grey;
+    border-radius: 10%;
+    padding: 15px;
+    padding-bottom: 20px;
+}
+
+.content::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+#left,
+#content {
+    width: 30%;
+    float: left;
+    box-sizing: border-box;
+    padding: 150px 30px;
+    /* background-color: antiquewhite; */
+}
+
+#left {
+    padding-top: 15px;
+}
+
+.content {
+    padding-top: 30px;
+    padding-left: 5px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.photo-content {
+    padding: 0px;
+}
+
+.photo {
+    height: 150px;
+    border-radius: 50%;
+}
+
+.btn-photo {
+    align-items: center;
+    background-color: rgb(16, 137, 137);
+    color: white;
+    height: 50px;
+    width: 150px;
+    border: 1px solid rgb(16, 137, 137);
+    border-radius: 10%;
+}
+
+.btn-save {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(16, 137, 137);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#content {
+    width: 70%;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 10%;
+    padding-top: 15px;
+}
+
+.frm-infor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.save-content {
+    float: right;
+    padding-right: 20px;
+}
+
+footer {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.col:last-child {
+    margin-right: 0;
+}
+
+.social-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-content li {
+    margin-right: 20px;
+}
+
+.social-content li:last-child {
+    margin-right: 0;
+}
+
+.social-content a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}
+
+.social-content a:hover {
+    background-color: #555;
+}

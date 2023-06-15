@@ -1,0 +1,49 @@
+.payment-content-left {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.payment-content-right {
+    width: 50%;
+    border-left: 2px solid #ddd;
+    padding-left: 12px;
+    text-align: left;
+}
+
+.container1 {
+    text-align: center;
+}
+
+.payment-content-left p,
+label {
+    font-size: 12px;
+    font-family: var(--main-text-font);
+}
+
+.payment-content-right-button {
+    display: flex;
+    padding: 12px 0;
+    border-bottom: dashed #dddddd;
+}
+
+.payment-content-right-button input {
+    height: 30px;
+    width: 200px;
+    margin-right: 100px;
+    padding-left: 12px;
+}
+
+.payment-content-right-button button {
+    height: 30px;
+    width: 200px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.payment-content-left-method-payment-img img {
+    height: 50px;
+    width: 150px;
+}

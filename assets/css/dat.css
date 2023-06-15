@@ -42,8 +42,10 @@
     margin-left: 0;
 }
 
+
+
 .header__navbar-item:first-child:hover {
-    /* cursor: pointer; */
+    cursor: pointer;
     color: var(--while-color);
 }
 
@@ -98,11 +100,6 @@
     color: #006ce4;
 }
 
-.header__navbar-item-btn a {
-    text-decoration: none;
-    color: #100f0f;
-}
-
 .header__navbar-item-btn:hover {
     color: #006ce4;  
     background-color: rgba(255, 255, 255, 0.95);
@@ -133,43 +130,8 @@
 .header__search {
     background-color: var(--while-color);
     height: 40px;
-    border-radius: 2px;
-    display: flex;
     flex: 1;
-    border-radius: 50px;
-}
-
-.header__search-info {
-    display: flex;
-    width: 150px;
-    align-items: center;
-    justify-content: space-around;
-    font-size: 1.8rem;
-    position: relative;
-    padding-right: 8px;
-}
-
-.header__search-info::after {
-    content: "";
-    display: block ;
-    position: absolute;
-    border: 1px solid #ccc;
-    height: 20px;
-    right: 0;
-}
-
-.header-location {
-    font-weight: 550;
-}
-
-.fa-sharp {
-    color: #5994ecf5;
-}
-
-.header-icon-down {
-    cursor: pointer;
-    position: relative;
-    top: 4%;
+    border-radius: 2px;
 }
 
 .header__cart {
@@ -184,27 +146,13 @@
 }
 
 .header_search-input {
-    width: 70%;
-    height: 25px;
+    width: 100%;
+    height: 100%;
     border: none;
-    font-size: 1.6rem;
-    padding: 0 16px;
-    position: relative;
-    top: 8px;
     outline: none;
-    flex: 1;
-}
-
-.Search_searchIcon {
-    font-size: 1.8rem;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    opacity: 0.7;
-}
-.Search_searchIcon:hover {
-    opacity: 1;
+    font-size: 1.4rem;
+    padding: 0 16px;
+    border-radius: 2px;
 }
 
 /* Slider */
@@ -255,7 +203,7 @@
     text-decoration: none;
     font-size: 1.6rem;
     line-height: 24px;
-    color: var(--black-color);
+    color: var(--while-color);
     font-weight: 700;
     font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
@@ -317,6 +265,10 @@
     margin: 0 10px;
 }
 
+.slick-initialized .slick-slide:last-child {
+    /* margin-right: 50px; */
+}
+
 
 
 .slick-arrow {
@@ -325,7 +277,7 @@
     transform: translateY(-50%); 
     width: 50px;
     height: 50px;
-    z-index: 1;
+    z-index: 2;
     background-color: var(--while-color);
     border-radius: 100%;
     border: 1px solid #ddd;
@@ -396,6 +348,10 @@
     height: 100%;
 }
 
+.promotion-image-background {
+
+}
+
 .information-title {
     position: absolute;
     top: 0;
@@ -445,60 +401,7 @@
     font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 
-/* Tab */
-
-.tabs {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.tabs .line {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 6px;
-    border-radius: 15px;
-    background-color: #006ce4;
-    transition: all 0.2s ease;     
-}
-
-.tab-item {
-    padding: 20px;
-    text-align: center;
-    color: #006ce4;
-    background-color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom: 5px solid transparent;
-    opacity: 0.6;
-    cursor: pointer;
-}
-
-.tab-item:hover {
-    opacity: 1;
-    background-color: rgba(40, 22, 143, 0.09);
-    border-color: rgba(88, 53, 194, 0.1);
-}
-
-.tab-item.active {
-    opacity: 1;
-}
-
-.tab-pane {
-    display: none;
-}
-
-.tab-pane.active {
-    display: block;
-}
-
-
-/* DatCSS */
+/*product*/
 .product{
     padding-bottom: 10px;
     border-bottom-left-radius: 5px ;
@@ -565,7 +468,6 @@
     background-color: #006ce4;
     font-weight: 700;
     font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    cursor: pointer;
 }
 .home_product-btn_booking-text{
     margin: 5px ;
@@ -589,5 +491,3 @@
     display: -webkit-box;
     text-overflow: ellipsis;
 }
-
-

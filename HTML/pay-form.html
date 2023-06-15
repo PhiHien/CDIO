@@ -1,0 +1,123 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/pay.css">
+    <link href=“https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap”
+        rel=“stylesheet”>
+    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+</head>
+
+<body>
+    <div class="app">
+        <!--Head -->
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item">Booking com</li>
+                        <li class="header__navbar-item header__navbar-item--connect">
+                            <span class="header__navbar-tile--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-help">
+                            <a href="" class="header__navbar-item-link">
+                                Trợ giúp
+                                <i class="header__navbar-icon far fa-question-circle"></i>
+                            </a>
+                        </li>
+                        <button class="header__navbar-item header__navbar-item-btn">Resigter</button>
+                        <button class="header__navbar-item header__navbar-item-btn">Sign in</button>
+                    </ul>
+                </nav>
+
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <img src="/assets/fonts/images (1).png" alt="" class="header__logo-name">
+                    </div>
+                    <div class="header__search">
+                        <input type="text" class="header_search-input" placeholder="Tìm kiếm phòng"></input>
+                    </div>
+                    <div class="header__cart">
+                        <i class="header__cart-icon fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Body-->
+        <div class="body">
+            <div class="container1">
+                <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+                <h2>Thanh toán</h2>
+                <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+            </div>
+
+            <div class="container2">
+                <div class="payment-content-row">
+                    <div class="payment-content-left">
+                        <div class="payment-content-left-method-payment">
+                            <p style="font-weight: bold;">Phương thức thanh toán</p>
+                            <p>Mọi giao dịch đều được bảo mật và mã hóa. Thông tin thẻ tín dụng hoặc tài khoản sử dụng
+                                để thanh toán sẽ không được lưu lại</p>
+                            <div class="payment-content-left-method-payment-item">
+                                <input name="method-payment" type="radio">
+                                <label for="">Thanh toán bằng thẻ tín dụng</label>
+                            </div>
+                            <div class="payment-content-left-method-payment-img">
+                                <img src="/assets/fonts/visa.png" alt="">
+                            </div>
+                            <div class="payment-content-left-method-payment-item">
+                                <input name="method-payment" type="radio">
+                                <label for="">Thanh toán bằng thẻ ATM</label>
+                            </div>
+                            <div class="payment-content-left-method-payment-img">
+                                <img src="/assets/fonts/atm.png" alt="">
+                            </div>
+                            <div class="payment-content-left-method-payment-item">
+                                <input name="method-payment" type="radio">
+                                <label for="">Thanh toán bằng Momo</label>
+                            </div>
+                            <div class="payment-content-left-method-payment-img">
+                                <img src="/assets/fonts/momo.png" alt="">
+                            </div>
+                            <div class="payment-content-left-method-payment-item">
+                                <input checked name="method-payment" type="radio">
+                                <label for="">Thanh toán tại Homestay</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-content-right">
+                        <div class="payment-content-right-button">
+                            <input type="text" placeholder="Mã giảm giá">
+                            <button><i class="fa-sharp fa-solid fa-circle-check"></i></button>
+                        </div>
+                        <div class="payment-content-right-button">
+                            <input type="text" placeholder="Mã khách hàng thân thiết">
+                            <button><i class="fa-sharp fa-solid fa-circle-check"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-content-right-payment">
+                    <button>Tiếp Tục Thanh Toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
