@@ -21,54 +21,29 @@
       "password": "123",
       "id": 3
     },
-    
     {
       "fullname": "Dang Huu Ngoc",
       "username": "Ngoc",
       "email": "huungoc@gmail.com",
       "password": "12345",
       "id": 12
+    },
+    {
+      "fullname": "tran doan dinh long",
+      "username": "Long",
+      "email": "dinhlong@gmail.com",
+      "password": "1111",
+      "id": 15
+    },
+    {
+      "fullname": "nguyen quoc huy",
+      "username": "Huy",
+      "email": "quochuy@gmail.com",
+      "password": "12345",
+      "id": 16
     }
   ],
   "i4Customer": [
-    {
-      "id": 1,
-      "HotelName": "Minh Homestay Da Nang",
-      "UserName": "Quynhuynh",
-      "Phone": "123456789",
-      "RoomType": "Standard",
-      "NumberofNights": "3",
-      "Check-inDate": "16/6/2023",
-      "Check-outDate": "16/6/2003"
-    },
-    {
-      "id": 2,
-      "HotelName": "Minh Homestay Da Nang",
-      "UserName": "Quynhuynh",
-      "Phone": "123456789",
-      "RoomType": "Standard",
-      "NumberofNights": "3",
-      "Check-inDate": "16/6/2023",
-      "Check-outDate": "16/6/2003"
-    },
-    {
-      "UserName": "123",
-      "Phone": "123",
-      "RoomType": "deluxe",
-      "numberOfPeople": "123",
-      "CheckinDate": "2023-06-09",
-      "CheckoutDate": "2023-06-10",
-      "id": 3
-    },
-    {
-      "UserName": "huynhquyn0811",
-      "Phone": "123",
-      "RoomType": "suite",
-      "numberOfPeople": "123",
-      "CheckinDate": "2023-03-12",
-      "CheckoutDate": "2023-06-25",
-      "id": 4
-    },
     {
       "UserName": "Rose Garden Homestay Da Nang 2",
       "Phone": "+840971010073",
@@ -77,6 +52,24 @@
       "CheckinDate": "2023-06-20",
       "CheckoutDate": "2023-06-22",
       "id": 8
+    },
+    {
+      "UserName": "White",
+      "Phone": "+84971010073",
+      "RoomType": "suite",
+      "numberOfPeople": "2",
+      "CheckinDate": "2023-06-20",
+      "CheckoutDate": "2023-06-22",
+      "id": 9
+    },
+    {
+      "UserName": "White",
+      "Phone": "",
+      "RoomType": "standard",
+      "numberOfPeople": "",
+      "CheckinDate": "",
+      "CheckoutDate": "",
+      "id": 10
     }
   ]
 }
