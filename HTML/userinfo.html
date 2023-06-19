@@ -5,79 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/userinfo.css">
+   <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
     <title>Document</title>
 </head>
 
 <body>
+    
     <header>
         <div id="head">
             <div class="logo">
-                <img class="logoimg" src="/assets/fonts/345870418_910510566730084_1926054567414586791_n.png" alt="logo">
-                <h2>HB Booking</h2>
+                <img class="logoimg" src="/assets/fonts/logo.png" alt="logo">
+                <a style="text-decoration: none; color: #000;" href="/Home.html">
+                    <h2>HB Booking</h2>
+                </a>
             </div>
             <div class="acount">
-                <p>TÀI KHOẢN CỦA TÔI</p>
-                <P>Trần Đoàn Đình Long</P>
-            </div>
-            <div class="date">
-                <p>HÔM NAY</p>
-                <P>02/06/2023</P>
+                <p>MY ACCOUNT</p>
+                <p class="username">Trần Đoàn Đình Long</p>
             </div>
             <div class="banner">
             </div>
         </div>
     </header>
-
     <section class="content">
-        <div class="headtag"></div>
-        <div id="left">
-            <label for="">Thông tin người dùng</label>
-            <div class="menu-table">
-                <div class="content-table">
-                    <img class="iconinfor-left" src="/assets/img/iconperson.PNG" alt="">
-                    <p>Thông tin tài khoản</p>
-                </div>
-                <div class="content-table">
-                    <img class="iconinfor-left" src="/assets/img/iconpassword.PNG" alt="">
-                    <p>Thay đổi mật khẩu</p>
-                </div>
-                <div class="content-table">
-                    <img class="iconinfor-left" src="/assets/img/iconconnect.PNG" alt="">
-                    <p>Liên kết tài khoản</p>
-                </div>
-            </div>
-        </div>
+       
         <div id="content">
             <div class="photo-content">
                 <img class="photo" src="/assets/img/Avatar-cute-meo.jpg" alt="">
-                <button class="btn-photo">Đổi Ảnh Đại Diện</button>
+                <button class="btn-photo">Change Profile Picture</button>
             </div>
             <div class="info-content">
                 <form class="frm-infor">
-                    <label for="name">Tên:</label>
+                    <label for="name">Name:</label>
                     <input type="text" id="fname" name="fname"><br>
 
-                    <label for="name">Họ và Tên Đệm:</label>
+                    <label for="name">Full name:</label>
                     <input type="text" id="lname" name="lname"><br>
 
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email"><br>
 
-                    <label for="phone">Số điện thoại:</label>
+                    <label for="phone">Phone:</label>
                     <input type="tel" id="phone" name="phone"><br>
 
-                    <label for="address">Địa chỉ:</label>
+                    <label for="address">Address:</label>
                     <textarea id="address" name="address"></textarea><br>
 
-                    <label for="name">Ngày Sinh:</label>
+                    <label for="name">Birth Day:</label>
                     <input type="text" id="date" name="date"><br>
 
-                    <label for="name">Giới Tính :</label>
+                    <label for="name">Gender :</label>
                     <input type="text" id="sex" name="sex"><br>
 
                 </form>
                 <div class="save-content">
-                    <button class="btn-save">Lưu Thông Tin</button>
+                    <button class="btn-save">Save</button>
                 </div>
             </div>
         </div>
@@ -86,7 +68,7 @@
         <div class="footer-content">
             <div class="row">
                 <div class="col">
-                    <h3>Liên hệ</h3>
+                    <h3>Contact</h3>
                     <ul>
                         <li>Fanpage: HB Booking</li>
                         <li>Email: homestaybooking@gmail.com</li>
@@ -94,15 +76,15 @@
                     </ul>
                 </div>
                 <div class="col">
-                    <h3>Thông tin</h3>
+                    <h3>Information</h3>
                     <ul>
-                        <li><a href="#">Về chúng tôi</a></li>
-                        <li><a href="#">Chính sách bảo mật</a></li>
-                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of use</a></li>
                     </ul>
                 </div>
                 <div class="col">
-                    <h3>Theo dõi chúng tôi</h3>
+                    <h3>Follow us</h3>
                     <ul class="social-content">
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -112,6 +94,14 @@
             </div>
         </div>
     </footer>
+     <script src="/assets/js/search.js"></script>
+     <script >
+        var username = localStorage.getItem("username");
+        var nameuser = document.querySelector('.username');
+        if (nameuser !== null) {
+        nameuser.innerText = username;
+    }
+    </script>
 </body>
 
 </html>

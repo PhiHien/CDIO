@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link href=“https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap”
         rel=“stylesheet”>
-    <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
    
     <title> Room information</title>
 </head>
-<body>
+<body >
     <div class="modal js-modal">
         <div class="modal__overlay"></div>
         <div class="modal__body">
@@ -150,24 +150,14 @@
                         </div>
                         <div class="booking__info--price">
                             <span class="info--price">500 k/night</span>
-                            <div class="info--since">
-                                <span class="info--since--title">Since</span>
-                                <input type="text" placeholder="27/04/2023"class="info--since--content">
-                                </input>
-                                <div class="info--since--icon">
-                                <i class="fa-solid fa-calendar-days"></i>
-                                </div>
-                            </div>
-                            <div class="info--expiration">
-                                <span class="info--since--title">To date</span>
-                                <input type="text" placeholder="27/04/2023" class="info--since--content"> 
-                                    <div class="info--expiration--icon">
-                                        <i class="fa-solid fa-calendar-days"></i>
-                                    </div>
-                                </input>
-                            </div>
-                            <button class="booking__buy">
-                                <span class="booking__buy--text">Book now</span>
+                            <label for="checkInDate">Check-in Date</label>
+                    <input type="date" id="checkInDate" name="checkInDate"/>
+
+                    <label for="checkOutDate">Check-out Date</label>
+                    <input type="date" id="checkOutDate" name="checkOutDate"/>
+
+                            <button class="booking__buy">               
+                                    <a href="/HTML/payment.html">  Book now</a>
                             </button>
                         </div>
                 </div>

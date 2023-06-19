@@ -95,4 +95,10 @@ bodyModal.addEventListener('click', function(e) {
     e.stopPropagation();
 });
 
+//gắn tên user tương ứng
+var username = localStorage.getItem("username");
+var nameuser = document.querySelector('.username');
+if (nameuser !== null) {
+  nameuser.innerText = username;
+}
 

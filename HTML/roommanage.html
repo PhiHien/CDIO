@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="/assets/css/dat.css">
-    <link rel="stylesheet" href="/assets/css/pham.css">
     <link rel="stylesheet" href="/assets/css/roommanagement.css">
     <link href=“https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap”
         rel=“stylesheet”>
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
     <link
-        rel="stylesheet"
+        rel="stylesheet"    
         type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
       />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
     <title>Roominformation</title>
 </head>
 <body>
@@ -35,13 +35,17 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-help">
+                            <a href="/Home.html" class="header__navbar-item-link">
+                                Home
+                            </a>
+                        </li>
+                    </ul>
     
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item-help">
-                            <a href="" class="header__navbar-item-link">
-                                Contact
-                                <i class="header__navbar-icon far fa-question-circle"></i>
-                            </a>
+                           
                         </li>
                         
                         <button class="header__navbar-item header__navbar-item-btn ">
@@ -219,9 +223,10 @@
                     </div>
                     <div class="Dgrid_column-8">
                         <div class="Dinstructor">
-                            <span class="Dinstructor-Availble"><i class="fa-solid fa-square-full" style="color: var(--DOccupied);" style="display: block;"></i> Available<br></span>
-                            <span class="Dinstructor-Occupied"><i class="fa-solid fa-square-full" style="color: var(--DAvailble);" style="display: block;"></i> Occupied<br></span>
-                            <span class="Dinstructor-Repairing"><i class="fa-solid fa-square-full" style="color: var(--DRepairing);" style="display: block;"></i> Repairing<br></span>
+                            <span class="Dinstructor-Availble"><i class="fa-solid fa-square-full" style="color: var(--DOccupied);" style="display: block;"></i> Available : Blue<br></span>
+                            <br> <br> <br>
+                            <span class="Dinstructor-Occupied"><i class="fa-solid fa-square-full" style="color: var(--DAvailble);" style="display: block;"></i> Occupied : Gray<br></span>
+                            <span class="Dinstructor-Repairing"><i class="fa-solid fa-square-full" style="color: var(--DRepairing);" style="display: block;"></i> Repairing : Red<br></span>
                         </div>
                         <div class="Droom-list">
                             <div class="Droom-floor">
