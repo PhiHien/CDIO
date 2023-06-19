@@ -118,7 +118,7 @@
 
 .roon__utility {
     flex:1;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 
@@ -127,7 +127,6 @@
 }
 
 .utility__info {
-    margin-top: 10px;
     display: flex;
     /* flex-wrap: wrap; */
 }
@@ -205,7 +204,7 @@
 .info__owner--content:before {
     content: '';
     position: absolute;
-    top: 44px;
+    top: 34px;
     left: 184px;
     height: 16px;
     border: 1px solid #ccc;
@@ -275,6 +274,10 @@
     margin-top: 10px;
 
 }
+.booking__buy a{
+    text-decoration: none;
+    color: #fff;
+}
 
 .booking__buy {
     border: none;
@@ -283,12 +286,17 @@
     font-size: 2rem;
     font-weight: 700;
     line-height: 1;
-    color: #FFFFFF;
+    color: #FFF;
     background: linear-gradient(90deg, #0aa1a6 0%, rgb(8 165 166 / 51%) 100%);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     cursor: pointer;
     opacity: 0.7;
+}
+
+.booking__buy {
+    text-decoration: none;
+    color: #fff;
 }
 
 .booking__buy:hover {
@@ -321,6 +329,61 @@
         transform: translateY(0);
     }
 }
+/* Thong báo */
 
+.toast {
+    display: block;
+}
 
+.toast__modal {
+    position: absolute;
+    top: -60px;
+    right: -200px;
+    width: 300px;
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    border-left: 8px solid #40be41;
+    display: none;  
+}
 
+.toast__icon {
+    padding: 10px;
+    
+}
+
+.toast__icon-boder {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    border-radius: 50px;
+    background-color: #40be41;
+}
+
+.toast__icon-boder i {
+    margin: auto ;
+    color: #fff;
+}
+
+.toast__body {
+    flex: 1;
+}
+
+.toast__title {
+
+}
+
+.toast__msg {
+
+}
+
+.toast__exit {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hien {
+    display: block;
+}

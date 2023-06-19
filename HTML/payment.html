@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/assets/css/a.css">
+    <link rel="stylesheet" href="/assets/css/b.css">
+    <link rel="stylesheet" href="/assets/css/pay.css">
+    <link href=“https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,700&display=swap”
+        rel=“stylesheet”>
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <title>Payment</title>
+</head>
+
+<body>
+    <div class="app">
+        <!--Head -->
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <a href="/index.html" class="header__navbar-item">HB Booking</a>
+                        <li class="header__navbar-item header__navbar-item--connect">
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item-help">
+                            <a href="" class="header__navbar-item-link">
+                                Help
+                                <i class="header__navbar-icon far fa-question-circle"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header-with-search">
+                    <div class="header__logo">
+                        <img src="/assets/fonts/logo.png" alt=""
+                            class="header__logo-name">
+                    </div>
+                  
+                </div>
+            </div>
+        </header>
+
+        <!--Body-->
+        <div class="body">
+            <div class="container1">
+                <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+                <h2>Thanh toán</h2>
+                <span class="lead">Vui lòng kiểm tra thông tin trước khi Đặt hàng.</span>
+            </div>
+
+            <div id="allContainer">
+                <form onsubmit="bookroom(event)">
+<label for="UserName">CustomerName</label>
+                    <input type="text" id="UserName" name="UserName"/>
+
+                    <label for="Phone">Phone</label>
+                    <input type="text" id="Phone" name="Phone"/>
+
+                    <label for="roomType">Room Type</label>
+                    <select id="roomType">
+                        <option value="standard">Standard</option>
+                        <option value="deluxe">Deluxe</option>
+                        <option value="suite">Suite</option>
+                    </select name= "roomType">
+
+                    <label for="numberOfpeple">Number of people</label>
+                    <input type="number" id="numberOfpeple" name="numberOfpeple"/>
+
+                    <label for="checkInDate">Check-in Date</label>
+                    <input type="date" id="checkInDate" name="checkInDate"/>
+
+                    <label for="checkOutDate">Check-out Date</label>
+                    <input type="date" id="checkOutDate" name="checkOutDate"/>
+
+                    <div class="save-content">
+                        <button href="/HTML/pay.html" class="btnsave">Continue</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/assets/js/pay.js">
+    </script>
+</body>
+
+</html>

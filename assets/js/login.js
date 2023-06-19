@@ -28,13 +28,29 @@ closeicon.addEventListener('click', () => {
 
 
 function signup(event) {
-    event.preventDefault();
+  event.preventDefault();
+  
+  var fullname = document.querySelector(".register input[type='fullname']").value;
+  var username = document.querySelector(".register input[type='username']").value;
+  var email = document.querySelector(".register input[type='email']").value;
+  var password = document.querySelector(".register input[type='password']").value;
+  
+  // Kiểm tra xem email đã tồn tại hay chưa
+  var users = Object.keys(localStorage);
+  var emailExists = false;
+  
+  for (var i = 0; i < users.length; i++) {
+    var user = JSON.parse(localStorage.getItem(users[i]));
     
-    var fullname = document.querySelector(".register input[type='fullname']").value;
-    var username = document.querySelector(".register input[type='username']").value;
-    var email = document.querySelector(".register input[type='email']").value;
-    var password = document.querySelector(".register input[type='password']").value;
-    
+    if (user.email === email) {
+      emailExists = true;
+      break;
+    }
+  }
+  
+  if (emailExists) {
+    alert("Email đã tồn tại");
+  } else {
     var user = {
       fullname: fullname,
       username: username,
@@ -47,6 +63,8 @@ function signup(event) {
     
     alert("Đăng ký thành công");
   }
+}
+
 
   function login(event) {
     event.preventDefault();
@@ -71,8 +89,11 @@ function signup(event) {
       alert("Đăng nhập thành công");
       window.location.href="/Home.html";
     } else {
-      alert("Thông tin đăng nhập không chính xác");
+      var errorMessage = document.getElementById("login-error-message");
+      errorMessage.innerText = "Thông tin đăng nhập không chính xác";
+      errorMessage.style.display = "block";
     }
   }
+  
 
   

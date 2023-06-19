@@ -1,4 +1,563 @@
 :root {
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+
+    --navbar-height: 60px;
+    --header-height: 120px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+}
+
+/* *{} sẽ update lên css lên tất cả phần tử html nhúng file base.css*/
+* { 
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+/* Responsive */
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.grid_column-10{
+    display:flex;
+    flex-wrap: wrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+}
+.grid_column-25{
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 25%;
+}
+
+
+
+
+
+
+.header {
+    height: var(--header-height);
+    background-color: #003b95;
+    background-image: linear-gradient(0,#5994ecf5,#3982ee);
+    z-index: 1;
+
+}
+
+.header__navbar {
+    height: var(--navbar-height);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navbar-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+.header__navbar-item {
+    display: inline-block;
+    margin: 0 8px;
+    position: relative;
+}
+
+.header__navbar-item--connect {
+    margin-left: 50px;
+}
+
+.header__navbar-item-help {
+    margin-right: 50px;
+}
+
+.header__navbar-item:first-child {
+    font-size: 2.5rem;
+    font-weight: 600;
+    top: 18%;
+    transform: translateY(-50%);
+    margin-left: 0;
+}
+
+
+
+.header__navbar-item:first-child:hover {
+    cursor: pointer;
+    color: var(--while-color);
+}
+
+.header__navbar-item,
+.header__navbar-item-link {
+    font-size: 1.8rem;
+    color: var(--while-color);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.header__navbar-item,
+.header__navbar-item-link,
+.header__navbar-icon-link {
+    display: flex;
+    align-items: center;
+}
+
+.header__navbar-item:hover,
+.header__navbar-icon:hover,
+.header__navbar-item-link:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.header__navbar-icon-link {
+    text-decoration: none;
+}
+
+.header__navbar-icon-link:nth-child(2) {
+    margin-left: 3px;
+}
+
+.header__navbar-icon {
+    color: var(--while-color);
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin: 0 4px;
+}
+
+.header__navbar-tile--no-pointer {
+    cursor: text;
+    color: var(--while-color);
+}
+
+.header__navbar-item-btn {
+    margin: 0 0 0 10px;
+    padding: 8px 10px;
+    border-radius: 2px;
+    border: none;
+    background-color: var(--while-color);
+    color: #006ce4;
+}
+
+.header__navbar-item-btn:hover {
+    color: #006ce4;  
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* header-width-search */
+
+.header-with-search {
+    height: var(--header-with-search-height);
+    display: flex;
+    align-items: center;
+}
+
+.header__logo {
+    width: 200px;
+    position: relative;
+}
+
+.header__logo-name {
+    position: absolute;
+    width: 101px;
+    border-radius: 54%;
+    height: 62px;
+    top: -35px;
+    right: 83px;
+}
+
+.header__search {
+    background-color: var(--while-color);
+    height: 40px;
+    flex: 1;
+    border-radius: 2px;
+}
+
+.header__cart {
+    width: 150px;
+    text-align: center;
+}
+
+.header__cart-icon {
+    color: var(--while-color);
+    font-size: 2rem;
+    margin-top: 4px;    
+}
+
+.header_search-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    padding: 0 16px;
+    border-radius: 2px;
+}
+
+/* Slider */
+.container-imgae {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.text-content {
+    position: absolute;
+    top: 206px;
+    color: var(--while-color);
+    max-width: 600px;
+    margin: 0 auto; 
+}
+
+.text-heading {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: Avenir Next,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    line-height: 62px;
+    margin: 0;
+}
+
+.text-description {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    font-family: Avenir Next,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    margin: 0;
+}
+
+.text-content .btn-login {
+    margin-top: 32px;
+    padding: 12px 18px;
+    background-color: #006ce4;
+    border: none;
+    border-radius: 2px;
+}
+
+.text-content .btn-login:hover {
+    cursor: pointer;;
+    background-color: #003b95;
+}
+
+.btn-login .btn-login-text {
+    text-decoration: none;
+    font-size: 1.6rem;
+    line-height: 24px;
+    color: var(--while-color);
+    font-weight: 700;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+/* Slick */
+.content_location {
+    margin-top: 4%;
+}
+
+.content-title {
+    font-size: 3.4rem;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.content-description {
+    margin: 16px 0;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.image {
+    margin-bottom: 0;
+    height: 300px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.image-title {
+    position: absolute;
+    top: 74%;
+    left: 6%;
+    color: var(--while-color);
+    line-height: 1;
+    font-weight: bold;
+}
+
+.image-title-heading {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    margin-top: -6px;
+} 
+
+.image-title-description {
+    font-size: 1.7rem;
+    padding-right: 0;
+} 
+
+
+.slick-initialized .slick-slide {
+    /* margin-right: 10px; */
+    margin: 0 10px;
+}
+
+.slick-initialized .slick-slide:last-child {
+    /* margin-right: 50px; */
+}
+
+
+
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    background-color: var(--while-color);
+    border-radius: 100%;
+    border: 1px solid #ddd;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.slick-arrow:hover {
+    cursor: pointer;
+    background-color: #006ce4;
+    color: var(--while-color);
+}
+
+.slick-prev {
+    left: -16px;
+    padding: 10px 20px;
+}
+
+.slick-next {
+    right: -16px;
+    padding: 10px 20px;
+}
+
+/* promotion */
+.promotion {
+    margin-top: 50px;
+}
+
+.promotion-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 32px;
+    color: #1a1a1a;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+.promotion-content {
+    margin: 4px 0 8px;
+    font-size: 1.6rem;
+    font-family: 400;
+    line-height: 2.4rem;
+    color: #474747;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+.promotion-image {
+    display: flex;
+    height: 185px;
+    justify-content: space-between;
+}
+
+.promotion-information {
+    position: relative;
+    width: 600px;
+}
+
+.promotion-image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.promotion-information:first-child {
+    margin-right: 16px;
+}
+
+.promotion-image-background {
+    width: 100%;
+    height: 100%;
+}
+
+.promotion-image-background {
+
+}
+
+.information-title {
+    position: absolute;
+    top: 0;
+    color: var(--while-color);
+    padding: 16px;
+    max-width: 326px;
+}
+
+.information-title-content {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    margin-bottom: 4px;
+}
+
+.information-title-promotion {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    margin-bottom: 16px;
+}
+
+.btn-title {
+    padding: 8px 12px;
+    border-radius: 2px;
+    border: none;
+    background-color: var(--while-color);
+    background-color: #006ce4;
+    color: var(--while-color);
+    border-radius: 4px;
+}
+
+.btn-title-2 {
+    margin-top: 24px;
+}
+
+.btn-title:hover {
+    background-color: #003b95;
+}
+
+.btn-title-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+
+/*product*/
+.product{
+    padding-bottom: 10px;
+    border-bottom-left-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+    border: 1px solid black;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    background-color: #FFFFF0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    transition: transform linear 0.1s;
+    will-change: transform;
+}
+.product:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.home_product-img{
+    padding-top: 100%;
+    margin-top: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home_product-name{
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8rem;
+    height: 3.6rem;
+    margin-left: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.home_product-price{
+    display: flex;
+    margin-top: -10px;
+    margin-left: 20px;
+    font-size: 1.6rem;
+    color: #2F4F4F;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+}
+.home_product-btn_booking {
+    border-radius: 5px;
+    margin-bottom: 5px;
+    border: #006ce4;
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    line-height: 24px;
+    background-color: #006ce4;
+    font-weight: 700;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.home_product-btn_booking-text{
+    margin: 5px ;
+    text-decoration: none;
+    font-size: 1.4rem;
+    line-height: 26px;
+    color: var(--while-color);
+    font-weight: 700;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.home_product-people{
+    display: flex;
+    margin-bottom: 1px;
+    position: fixed;
+    bottom: 1px;
+    right: 10px;
+    font-size: 1.6rem;
+    color: #0C090A;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+:root {
     --DAvailble: #BEBEBE;
     --DOccupied:#4876FF;
     --DRepairing: red;
@@ -108,7 +667,7 @@
 }
 /*Droommanage-instructor*/
 .Dinstructor{
-    background-color: #FFFFF0;
+    background-color: #fff;
     margin-right: 8px;
     margin-left: 20px;
     margin-top: 15px;
@@ -117,20 +676,35 @@
     position:fixed;
     right: 1%;
     border-radius: 10px;
-    width: 15%;
-    height: 70px;
+    width: 10%;
+    height: 200px;
 }
 .Dinstructor-Availble{
     font-size: 1.7rem;
+    border: 1px solid blue;
+    border-radius: 15px;
+    color: #003b95;
     padding: 5px;
+    float: right;
+    margin-bottom: 2rem;
 }
 .Dinstructor-Occupied{
     font-size: 1.7rem;
+    border: 1px solid #ee163a;
+    border-radius: 15px;
+    color: #ee163a;
     padding: 5px;
+    float: right;
+    margin-bottom: 2rem;
 }
 .Dinstructor-Repairing{
     font-size: 1.7rem;
+    border: 1px solid #454142;
+    border-radius: 15px;
+    color: #454142;
     padding: 5px;
+    float: right;
+    margin-bottom: 2rem;
 }
 /*Droom-list*/
 .Droom-list{

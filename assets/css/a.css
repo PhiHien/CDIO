@@ -13,7 +13,6 @@
     box-sizing: inherit;
     padding: 0;
     margin: 0;
-    
 }
 
 html {
@@ -39,17 +38,3 @@ html {
     margin-left: -5px;
     margin-right: -5px;
 }
-.grid_column-10{
-    display:flex;
-    flex-wrap: wrap;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 100%;
-}
-.grid_column-25{
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 25%;
-}
-
-
