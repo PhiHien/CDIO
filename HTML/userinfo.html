@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
     <link rel="stylesheet" href="/assets/css/userinfo.css">
-   <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
-    <title>Document</title>
+    <title>Userinfo</title>
+    <style>
+        .infoAll-room {
+            margin-bottom: 15px;
+        }
+
+        .edit-info-content,
+        .info-user {
+            margin-top: 20px;
+        }
+
+        .edit-info-content {
+            display: none;
+        }
+
+        .open {
+            display: block;
+        }
+
+        .hiden {
+            display: none;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -32,34 +55,69 @@
         <div id="content">
             <div class="photo-content">
                 <img class="photo" src="/assets/img/Avatar-cute-meo.jpg" alt="">
-                <button class="btn-photo">Change Profile Picture</button>
+                
             </div>
-            <div class="info-content">
-                <form class="frm-infor">
+            <div class="edit-info-content">
+                <form  class="frm-infor">
                     <label for="name">Name:</label>
-                    <input type="text" id="fname" name="fname"><br>
+                    <input type="text" id="fname" name="name" required><br>
 
                     <label for="name">Full name:</label>
-                    <input type="text" id="lname" name="lname"><br>
+                    <input type="text" id="lname" name="fullname" required><br>
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email"><br>
+                    <input type="email" id="email" name="email" required><br>
 
                     <label for="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone"><br>
+                    <input type="tel" id="phone" name="phone" required><br>
 
-                    <label for="address">Address:</label>
-                    <textarea id="address" name="address"></textarea><br>
+                    <label for="phone">Address:</label>
+                    <input type="text" id="phone" name="address" required><br>
 
+                   
                     <label for="name">Birth Day:</label>
-                    <input type="text" id="date" name="date"><br>
+                    <input type="text" id="date" name="date" required><br>
 
-                    <label for="name">Gender :</label>
-                    <input type="text" id="sex" name="sex"><br>
+                    <label for="name">Giới Tính :</label>
+                    <input type="text" id="sex" name="gender" required><br>
 
                 </form>
-                <div class="save-content">
-                    <button class="btn-save">Save</button>
+                <div class="update-content">
+                    <button class="btn-save">update</button>
+                </div>
+            </div>
+            <div class="info-user">
+                <form class="frm-infor">
+                    <div class="infoAll-room name">Name:
+                        <span class="">Huynhquyn</span>
+                    </div>
+
+                    <div class="infoAll-room fullname">Full name:
+                        <span class="">Huỳnh Văn Quyn</span>
+                    </div>
+
+                    <div class="infoAll-room email">Email:
+                        <span class="">huynhquyn0811@gmail.com</span>
+                    </div>
+
+                    <div class="infoAll-room phone">Phone:
+                        <span class="">12312121</span>
+                    </div>
+
+                    <div class="infoAll-room address">Address:
+                        <span class="">Quảng Nam</span>
+                    </div>
+
+                    <div class="infoAll-room birthday">Birth Day:
+                        <span class="">2023-06-30</span>
+                    </div>
+
+                    <div class="infoAll-room gender">Giới Tính :
+                        <span class="">Nam</span>
+                    </div>
+                </form>
+                <div class="edit-info">
+                    <button class="btn-save">Edit</button>
                 </div>
             </div>
         </div>
@@ -92,15 +150,59 @@
                     </ul>
                 </div>
             </div>
-        </div>
     </footer>
-     <script src="/assets/js/search.js"></script>
      <script >
         var username = localStorage.getItem("username");
         var nameuser = document.querySelector('.username');
         if (nameuser !== null) {
         nameuser.innerText = username;
-    }
+        }
+
+        //userinfo
+
+        const infovalue = document.querySelector('.edit-info-content');
+        const infouser = document.querySelector('.info-user');
+        const edit = document.querySelector('.edit-info');
+        const update = document.querySelector('.update-content');
+
+        edit.onclick = function() {
+            infouser.classList.add('hiden');
+            infovalue.classList.add('open');
+        }
+
+        function editinfo() {
+            var name = document.querySelector('input[name="name"]').value;
+            var fullname = document.querySelector('input[name="fullname"]').value;
+            var email = document.querySelector('input[name="email"]').value;
+            var phone = document.querySelector('input[name="phone"]').value;
+            var address = document.querySelector('input[name="address"]').value;
+            var date = document.querySelector('input[name="date"]').value;
+            var gender = document.querySelector('input[name="gender"]').value;
+            
+            const name1 = document.querySelector(".name span");
+            const fullname1 = document.querySelector(".fullname span");
+            const email1 = document.querySelector(".email span");
+            const phone1 = document.querySelector(".phone span");
+            const address1 = document.querySelector(".address span");
+            const date1 = document.querySelector(".birthday span");
+            const gender1 = document.querySelector(".gender span");
+
+            name1.innerText = name;
+            fullname1.innerText = fullname;
+            email1.innerText = email;
+            phone1.innerText = phone;
+            address1.innerText = address;
+            date1.innerText = date;
+            gender1.innerText = gender;
+
+        }
+            update.addEventListener('click', () => {
+                editinfo();
+                alert('lưu thành công');
+                infovalue.classList.remove('open');
+                infouser.classList.remove('hiden');
+            })
+        
     </script>
 </body>
 

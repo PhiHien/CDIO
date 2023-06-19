@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/userinfo.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
+    <title>Information</title>
+    <style>
+        .frm-infor {
+            display: block;
+        }
+
+        .infoAll-room {
+            margin-bottom: 15px;
+        }
+
+        .info-content {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <div id="head">
+            <div class="logo">
+                <img class="logoimg" src="/assets/fonts/logo.png" alt="logo">
+                <a style="text-decoration: none; color: #000;" href="/index.html">
+                    <h2>HB Booking</h2>
+                </a>
+            </div>
+            <div class="acount">
+                <p>MY ACCOUNT</p>
+                <p class="username">Trần Đoàn Đình Long</p>
+            </div>
+           
+           
+            <div class="banner">
+            </div>
+        </div>
+    </header>
+    <section class="content">
+       
+        <div id="content">
+            <div class="photo-content">
+                <img class="photo" src="/assets/img/Avatar-cute-meo.jpg" alt="">
+                
+            </div>
+            <div class="info-content" >
+                <form class="frm-infor">
+                    <div class="infoAll-room info-room">CustomerName:
+                        <span class="">Minh Homestay Da Nang</span>
+                    </div>
+
+                    <div class="infoAll-room info-phone">Phone:
+                        <span class="">123213</span>
+                    </div>
+
+                    <div class="infoAll-room info-roomtype">Room Type:
+                        <span class="">deluxe</span>
+                    </div>
+
+                    <div class="infoAll-room info-Numberofpeople">Number of people:
+                        <span class="">1231</span>
+                    </div>
+
+                    <div class="infoAll-room info-Check-in">Check-in Date:
+                        <span class="">2023-06-24</span>
+                    </div>
+
+                    <div class="infoAll-room info-Check-out">Check-out Date:
+                        <span class="">2023-06-30</span>
+                    </div>
+
+                    <div class="infoAll-room Totalcost">Total cost:
+                        <span class="">5000000</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="row">
+                <div class="col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Fanpage: HB Booking</li>
+                        <li>Email: homestaybooking@gmail.com</li>
+                        <li>Điện thoại: 0123456789</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of use</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Follow us</h3>
+                    <ul class="social-content">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+    </footer>
+     <script src="/assets/js/info.js"></script>
+     <script >
+        var username = localStorage.getItem("username");
+        var nameuser = document.querySelector('.username');
+        if (nameuser !== null) {
+        nameuser.innerText = username;
+    }
+    </script>
+</body>
+
+</html>

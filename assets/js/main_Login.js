@@ -84,55 +84,25 @@ function hanldeLogin(data) {
   var email = document.getElementById("login-email").value;
   var password = document.getElementById("login-password").value;
   var isLoggedIn = false;
-  for(var i = 0; i < data.length; i++) {
-    if(data[i].email == email && data[i].password == password) {
-      var username = data[i].username;
-      alert("Đăng nhập thành công");
-      window.location.href = "/Home.html";
-      localStorage.setItem("username", username);
-      isLoggedIn = true; // gán giá trị true cho biến cờ nếu đăng nhập thành công
-      break; // dừng vòng lặp khi đăng nhập thành công
-    }
+
+  var existingUser = data.find(function(user) {
+    return user.email === email && user.password === password;
+  });
+
+  if (existingUser) {
+    var username = existingUser.username;
+    alert("Đăng nhập thành công");
+    window.location.href = "/Home.html";
+    localStorage.setItem("username", username);
+    isLoggedIn = true;
   }
+
   if (!isLoggedIn) {
     alert("Đăng nhập thất bại");
   }
 }
 
+
+
 // var nameuser = document.querySelector('.username');
 // nameuser.innerText = `${a}`;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
