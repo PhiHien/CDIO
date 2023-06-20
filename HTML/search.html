@@ -5,19 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tìm kiếm</title>
+    <title>Search</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/assets/fonts/fontawesome-free-6.4.0-web/fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
     <style>
-        .hidden {
+        /* .hidden {
             display: none;
+        } */
+        #roomContainer {
+            margin-bottom: 20px;
+        }
+        .open {
+            display: block;
         }
     </style>
 </head>
 
-<body style="background-image: url('/assets/fonts/login.jpg');" class="bg-cover">
+<body class="bg-gray-100">
     <div class="container mx-auto p-8">
         <div class="flex justify-center items-center">
             <div>
@@ -27,24 +36,15 @@
         </div>
         <div class="flex items-center justify-between mb-4">
             <div>
-              <span class="font-bold">User</span>
-              <img src="/assets/fonts/user.jpg" alt="User image" class="w-16 h-16 rounded-full">
-              <span class="text-black-600 text-xl username" id="user-display"> Username</span>
+                <span class="font-bold">User</span>
+                <img src="/assets/fonts/user.jpg" alt="User image" class="w-16 h-16 rounded-full">
+                <span class="username text-black-600 text-xl" id="user-display">Username</span>
             </div>
-            <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded justify-center">
-                <a href="/Home.html">
-                  <svg class="h-5 w-5 inline-block mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M17 9v7h-1v-6H4v6H3V9l7-7 7 7zm-2-1V4.618l-5-5-5 5V8H5v9h10V8h-1z" />
-                  </svg>
-                  Home
-                </a>
-              </button>
-              
             <div>
-              <span class="font-bold">Today:</span>
-              <span class="text-black-600 text-xl" id="today-display"></span>
+                <span class="font-bold">Today:</span>
+                <span class="text-black-600 text-xl" id="today-display"></span>
             </div>
-          </div>
+        </div>
 
 
         <div class="flex justify-center items-center mb-8">
@@ -57,17 +57,12 @@
                     placeholder="Amount of people: ">
                 <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-r-md flex items-center">
                     <span class="material-symbols-outlined">search</span>
-                   
-                </button>
 
-            </button>
-           
+                </button>
             </form>
         </div>
 
-        <div id="searchResultsContainer" class="bg-white p-4 rounded shadow">
-            <!-- Kết quả tìm kiếm sẽ được hiển thị ở đây -->
-        </div>
+        
     </div>
 
     <div class="container mx-auto p-8">
@@ -79,17 +74,20 @@
                 <h2 class="text-xl font-bold mb-2">Minh Homestay Da Nang</h2>
                 <p class="text-black-600 mb-2">Addres: 104 To Hien Thanh Street,Son Tra District, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
+
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Fully furnished, quite far from the sea, no elevator.</p>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
-                data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
-                data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                <a href="/HTML/blogdetail1.html">Room information</a>
+                    data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
+                    data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                    <a href="room1.html">Room information</a>
                 </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
-                data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2">
-                <a href="/HTML/room information.html"> <a href="/HTML/room information.html">Set room</a>
-            </a>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Homestay A"
+                    data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2">
+                    <a class = "bookingromma"href="#">Set room</a>
                 </button>
             </div>
 
@@ -98,19 +96,19 @@
                 <h2 class="text-xl font-bold mb-2">Moc House Da Nang</h2>
                 <p class="text-black-600 mb-2">Addres: K35/30 To Hien Thanh Street, Son Tra District, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 4</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Fully equipped with amenities such as fan, air conditioner, iron,
                     hair dryer, lamp, desk, etc..</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blogdetail2.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Moc House Da Nang"
-                    data-room-address="123 ABC Street, Thành phố X" data-room-guests="2">
-                    <a href="/HTML/room information.html"> <a href="/HTML/room information.html">Set room</a>
-                </a>
+                    <a href="room2.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Moc House Da Nang"
+                    data-room-address="123 ABC Street, Thành phố X" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -118,17 +116,20 @@
                 <h2 class="text-xl font-bold mb-2">Rose Garden Homestay Da Nang 2</h2>
                 <p class="text-black-600 mb-2">Addres: 30/7 Ha Bon Street, Son Tra District, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 3</p>
+                <p class="text-black-600 mb-2">Room cost: 3.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 30 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.000.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Diverse types from apartment rooms, single rooms, double rooms, bunk
                     rooms, small area 15 -18 m2, fully furnished.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blogdetail3.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Rose Garden Homestay Da Nang 2"
-                    data-room-address="30/7 Ha Bon Street, Son Tra District, Da Nang City" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room3.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm"
+                    data-room-name="Rose Garden Homestay Da Nang 2"
+                    data-room-address="30/7 Ha Bon Street, Son Tra District, Da Nang City" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -136,36 +137,42 @@
                 <h2 class="text-xl font-bold mb-2">Loving Homestay Da Nang 2</h2>
                 <p class="text-black-600 mb-2">Addres: 41 An Cư 7 Street, Son Tra District, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> location near the sea, near the city center, various types from
                     apartment rooms, single rooms, double rooms, bunk rooms.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blogdetail4.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Loving Homestay Da Nang 2"
-                    data-room-address="41 An Cư 7 Street, Son Tra District, Da Nang City" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room4.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Loving Homestay Da Nang 2"
+                    data-room-address="41 An Cư 7 Street, Son Tra District, Da Nang City" data-room-guests="2">Set room</button>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="roomContainer">
             <div class="bg-white rounded-lg shadow p-4">
                 <img src="/assets/fonts/room5.jpg" alt="Room 5" class="w-full mb-4">
-                <h2 class="text-xl font-bold mb-2">MPOSIKI Dorm Homestay</h2>
+                <h2 class="text-xl font-bold mb-2">POSIKI Dorm Homestay</h2>
                 <p class="text-black-600 mb-2">Addres: 215 D. Tran Phu, Phuoc Ninh, Hai Chau, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 4-5</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.500.000 VND</p>
                 <h3>Describe:</h3>
-                <p class="text-black-600">Coming to POSIKI Dorm & Café, visitors will have the opportunity to experience a modern and youthful motel space with a luxurious 8-storey design. 
-                    From here, you can direct your eyes to the Han River, the area near the Dragon Bridge and enjoy the lights of the whole city</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <p class="text-black-600">Coming to POSIKI Dorm & Café, visitors will have the opportunity to experience
+                    a modern and youthful motel space with a luxurious 8-storey design.
+                    From here, you can direct your eyes to the Han River, the area near the Dragon Bridge and enjoy the
+                    lights of the whole city</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="MPOSIKI Dorm Homestay"
-                    data-room-address="Tran Phu, Phuoc Ninh, Hai Chau, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room5.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="MPOSIKI Dorm Homestay"
+                    data-room-address="Tran Phu, Phuoc Ninh, Hai Chau, Da Nang" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -173,16 +180,18 @@
                 <h2 class="text-xl font-bold mb-2"> Altara Apartment Da Nang </h2>
                 <p class="text-black-600 mb-2">Addres: 120 Vo Nguyen Giap, Phuoc My, Son Tra, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 4</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Fully furnished 2 bedroom apartment with sea view</p>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
-                data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
-                data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                <a href="/HTML/blog.html">Room information</a>
+                    data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
+                    data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                    <a href="room6.html">Room information</a>
                 </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Altara Apartment Da Nang"
-                    data-room-address="120 Vo Nguyen Giap, Phuoc My, Son Tra, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
-                </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Altara Apartment Da Nang"
+                    data-room-address="120 Vo Nguyen Giap, Phuoc My, Son Tra, Da Nang" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -190,36 +199,40 @@
                 <h2 class="text-xl font-bold mb-2">White Homestay</h2>
                 <p class="text-black-600 mb-2">Addres: 76, Le Quang Dao, My An, Ngu Hanh Son, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Diverse types from apartment rooms, single rooms, double rooms, bunk
                     rooms, small area 15 -18 m2, fully furnished.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="White Homestay"
-                    data-room-address="76, Le Quang Dao, My An, Ngu Hanh Son, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room7.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="White Homestay"
+                    data-room-address="76, Le Quang Dao, My An, Ngu Hanh Son, Da Nang" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
                 <img src="/assets/fonts/room8.jpg" alt="Room 8" class="w-full mb-4">
                 <h2 class="text-xl font-bold mb-2">Rice House Homestay Da Nang </h2>
                 <p class="text-black-600 mb-2">Addres: 106/5 Le Dinh Ly, Vinh Trung, Thanh Khe, Da Nang</p>
-                <p class="text-black-600 mb-2">Amount of people: 8</p>
+                <p class="text-black-600 mb-2">Amount of people: 4</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Rice House is a cozy house designed with every space you need: Living room,
-                     kitchen with all amenities, 4 BR, 
+                    kitchen with all amenities, 4 BR,
                     reading area, balcony, terrace and laundry place.- 3 min. to Nguyen Van Linh stree.t</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Rice House Homestay Da Nang"
-                    data-room-address="106/5 Le Dinh Ly, Vinh Trung, Thanh Khe, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room8.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Rice House Homestay Da Nang"
+                    data-room-address="106/5 Le Dinh Ly, Vinh Trung, Thanh Khe, Da Nang" data-room-guests="2">Set room</button>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="roomContainer">
@@ -228,16 +241,19 @@
                 <h2 class="text-xl font-bold mb-2">Altara Da Nang View My Khe Beach by S Stay</h2>
                 <p class="text-black-600 mb-2">Addres: 120 Vo Nguyen Giap, Phuoc My, Son Tra, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Fully furnished, quite far from the sea, no elevator.</p>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
-                data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
-                data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                <a href="/HTML/blog.html">Room information</a>
+                    data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
+                    data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                    <a href="#">Room information</a>
                 </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Altara Da Nang View My Khe Beach by S Stay"
-                    data-room-address=" 120 Vo Nguyen Giap, Phuoc My, Son Tra, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
-                </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm"
+                    data-room-name="Altara Da Nang View My Khe Beach by S Stay"
+                    data-room-address=" 120 Vo Nguyen Giap, Phuoc My, Son Tra, Da Nang" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -245,17 +261,20 @@
                 <h2 class="text-xl font-bold mb-2"> Loving House Da Nang</h2>
                 <p class="text-black-600 mb-2">Addres: K35/30 To Hien Thanh Street, Son Tra District, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 4</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Fully equipped with amenities such as fan, air conditioner, iron,
                     hair dryer, lamp, desk, etc..</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Loving House Da Nang"
-                    data-room-address=" K35/30 To Hien Thanh Street, Son Tra District, Da Nang City" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room10.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Loving House Da Nang"
+                    data-room-address=" K35/30 To Hien Thanh Street, Son Tra District, Da Nang City"
+                    data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -263,35 +282,42 @@
                 <h2 class="text-xl font-bold mb-2">Hoa An Home Update Room</h2>
                 <p class="text-black-600 mb-2">Addres: 76/10 Ha Bong, Phuoc My Ward, Son Tra, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
-                <p class="text-black-600"> Hoa An home is located at 76/10 Ha Bong, Phuoc My, Son Tra, Da Nang near My Khue and 
+                <p class="text-black-600"> Hoa An home is located at 76/10 Ha Bong, Phuoc My, Son Tra, Da Nang near My
+                    Khue and
                     Pham Van Dong beaches.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Hoa An Home Update Room"
-                    data-room-address="k41/19 Mai Hac De, An Hai Tay, Son Tra, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room11.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Hoa An Home Update Room"
+                    data-room-address="76/10 Ha Bong, Phuoc My Ward, Son Tra, Da Nang City" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
                 <img src="/assets/fonts/room13.jpg" alt="Room 12" class="w-full mb-4">
                 <h2 class="text-xl font-bold mb-2">Ris Homestay</h2>
-                <p class="text-black-600 mb-2">Addres: 36 Phuoc Truong 15 Street, Phuoc My Ward, Son Tra, Da Nang City</p>
-                <p class="text-black-600 mb-2">Amount of people: 2</p>  
-                <h3>Describe:</h3> 
+                <p class="text-black-600 mb-2">Addres: 36 Phuoc Truong 15 Street, Phuoc My Ward, Son Tra, Da Nang City
+                </p>
+                <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
+                <h3>Describe:</h3>
                 <p class="text-black-600"> Ris Hotel is located at 36 Phuoc Truong 15 .
                     Family room: 2 beds 1.4*2 m (4 guests)</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Ris Homestay"
-                    data-room-address="36 Phuoc Truong 15 Street, Phuoc My Ward, Son Tra, Da Nang City" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room12.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded  bookingromm" data-room-name="Ris Homestay"
+                    data-room-address="36 Phuoc Truong 15 Street, Phuoc My Ward, Son Tra, Da Nang City"
+                    data-room-guests="2">Set room</button>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="roomContainer">
@@ -300,18 +326,21 @@
                 <h2 class="text-xl font-bold mb-2">Joey Homestay and Apartment</h2>
                 <p class="text-black-600 mb-2">Addres: 30/4 Ha Bong, Phuoc My, Son Tra, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 1-4</p>
+                <p class="text-black-600 mb-2">Room cost: 1-4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 60 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 2.000.000 VND</p>
                 <h3>Describe:</h3>
-                <p class="text-black-600"> The apartment has its own kitchen, windows and lots of green trees. Very suitable for going with family. The location of the apartment near the My Khue beach. In particular, there is a free washing machine here. 
+                <p class="text-black-600"> The apartment has its own kitchen, windows and lots of green trees. Very suitable for going with family.
+                     The location of the apartment near the My Khue beach. In particular, there is a free washing machine here. 
                     There are many and convenient restaurants around the area.</p>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Joey Homestay and Apartment"
                 data-room-address="30/4 Ha Bong, Phuoc My, Son Tra, Da Nang" data-room-guests="2"
                 data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                <a href="/HTML/blog.html">Room information</a>
+                    <a href="room13.html">Room information</a>
                 </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Joey Homestay and Apartment"
-                data-room-address="30/4 Ha Bong, Phuoc My, Son Tra, Da Nang" data-room-guests="2">
-                <a href="/HTML/blog.html"> <a href="/HTML/room information.html">Set room</a>
-            </a>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Homestay A"
+                    data-room-address="104 To Hien Thanh Street,Son Tra District, Da Nang City" data-room-guests="2">
+                    <a href="#">Set room</a>
                 </button>
             </div>
 
@@ -320,17 +349,19 @@
                 <h2 class="text-xl font-bold mb-2">Ms. Thuong Homestay</h2>
                 <p class="text-black-600 mb-2">Addres: 03 Ngu Hanh Son, Bac My Phu, Ngu Hanh Son, Da Nang 550000</p>
                 <p class="text-black-600 mb-2">Amount of people: 2-6</p>
+                <p class="text-black-600 mb-2">Room cost: 2-6.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 60 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 2.500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Ms. Thuong serves a single room with 1 bed, a double room for 2 people, a family room with 2 beds or 
                     a whole house with 5-6 bedrooms for large families if required. Prices are broken down as follows:</p>
                     <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Ms. Thuong Homestay"
                     data-room-address="03 Ngu Hanh Son, Bac My Phu, Ngu Hanh Son, Da Nang 550000" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Ms. Thuong Homestay"
-                    data-room-address="03 Ngu Hanh Son, Bac My Phu, Ngu Hanh Son, Da Nang 550000" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room14.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Moc House Da Nang"
+                    data-room-address="123 ABC Street, Thành phố X" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -338,16 +369,19 @@
                 <h2 class="text-xl font-bold mb-2">Memory Homesaty</h2>
                 <p class="text-black-600 mb-2">Addres: 202 Ho Nghinh Street, Danang city, Vietnam.</p>
                 <p class="text-black-600 mb-2">Amount of people: 3</p>
+                <p class="text-black-600 mb-2">Room cost: 3.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 30 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.000.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600">The price of Memory Hostel's room from about 170k/person/night means you can own a super nice room with full amenities right away.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Memory Homesaty"
-                    data-room-address="202 Ho Nghinh Street, Danang city, Vietnam." data-room-guests="2"
-                    data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Memory Homesaty"
-                    data-room-address="202 Ho Nghinh Street, Danang city, Vietnam." data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Memory Homesaty"
+                data-room-address="202 Ho Nghinh Street, Danang city, Vietnam." data-room-guests="2"
+                data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                    <a href="room15.html">Room information</a>
                 </button>
+                <button  class="bg-green-500 text-white px-4 py-2 rounded bookingromm"
+                    data-room-name="Rose Garden Homestay Da Nang 2"
+                    data-room-address="30/7 Ha Bon Street, Son Tra District, Da Nang City" data-room-guests="2">Set room</button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -355,16 +389,19 @@
                 <h2 class="text-xl font-bold mb-2">Brothers Homestay Da Nang</h2>
                 <p class="text-black-600 mb-2">Addres: 44 An Thuong 17, Bac My Phu, Ngu Hanh Son, Da Nang 550000, Vietnam</p>
                 <p class="text-black-600 mb-2">Amount of people: 2 - 4</p>
+                <p class="text-black-600 mb-2">Room cost: 2-4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 45 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.000.000 VND</p>
                 <h3>Describe:</h3>
-                <p class="text-black-600"> Located in Tay An Thuong neighborhood, Brothers helps you to clearly feel the European taste from the style and the people living here.</p>
+                <p class="text-black-600"> Located in Tay An Thuong neighborhood, Brothers helps you to clearly feel the 
+                    European taste from the style and the people living here.</p>
                     <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Brothers Homestay Da Nang"
                     data-room-address="44 An Thuong 17, Bac My Phu, Ngu Hanh Son, Da Nang 550000, Vietnam" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Brothers Homestay Da Nang"
-                    data-room-address="44 An Thuong 17, Bac My Phu, Ngu Hanh Son, Da Nang 550000, Vietnam" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    <a href="room16.html">Room information</a>
                 </button>
+                <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Brothers Homestay Da Nang"
+                data-room-address="44 An Thuong 17, Bac My Phu, Ngu Hanh Son, Da Nang 550000, Vietnam" data-room-guests="2"> Set room</button>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="roomContainer">
@@ -373,16 +410,20 @@
                 <h2 class="text-xl font-bold mb-2">Dreamy House Boutique Homesay</h2>
                 <p class="text-black-600 mb-2">Addres: k30/3 Ha Bong, Phuoc My, Son Tra, Da Nang, Vietnam</p>
                 <p class="text-black-600 mb-2">Amount of people: 1-4</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.500.000 VND</p>
                 <h3>Describe:</h3>
-                <p class="text-black-600">With this location, it only takes you about 5 minutes to go from Dreamy to the sea. In addition, Dreamy is only about 10 minutes by motorbike from Dragon Bridge. With the location is 
+                <p class="text-black-600">With this location, it only takes you about 5 minutes to go from Dreamy to the sea. 
+                    In addition, Dreamy is only about 10 minutes by motorbike from Dragon Bridge. With the location is 
                     not so excellent, but in return the quality of service here will not disappoint you.</p>
                     <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Dreamy House Boutique Homesay"
                     data-room-address="k30/3 Ha Bong, Phuoc My, Son Tra, Da Nang, Vietnam" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
+                    <a href="room17.html">Room information</a>
                     </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Dreamy House Boutique Homesay"
-                    data-room-address="k30/3 Ha Bong, Phuoc My, Son Tra, Da Nang, Vietnam" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Dreamy House Boutique Homesay"
+                    data-room-address="k30/3 Ha Bong, Phuoc My, Son Tra, Da Nang, Vietnam" data-room-guests="2"> Set room</a>
                 </button>
             </div>
 
@@ -391,17 +432,21 @@
                 <h2 class="text-xl font-bold mb-2"> Mo House – Homestay </h2>
                 <p class="text-black-600 mb-2">Addres: K126/20 Nguyen Duy Hieu, Son Tra District, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 2-4</p>
+                <p class="text-black-600 mb-2">Room cost: 1-4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Rooms at Bo House are inspired by bohemian and Vietnamese brocade, so if anyone loves a slightly wild and 
                     cozy style, this is the right destination for everyone to choose.</p>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Mo House – Homestay"
                 data-room-address="K126/20 Nguyen Duy Hieu, Son Tra District, Da Nang" data-room-guests="2"
                 data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                <a href="/HTML/blog.html">Room information</a>
+                <a href="room18.html">Room information</a>
                 </button>
                 <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Mo House – Homestay"
-                    data-room-address="K126/20 Nguyen Duy Hieu, Son Tra District, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                    data-room-address="K126/20 Nguyen Duy Hieu, Son Tra District, Da Nang" data-room-guests="2"> Set room</a>
                 </button>
+
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -409,18 +454,21 @@
                 <h2 class="text-xl font-bold mb-2">Bamboo Homestay</h2>
                 <p class="text-black-600 mb-2">Addres: 07 Ha Dat. Phuoc My Ward, Son Tra District, Da Nang City</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600">Bamboo Homestay Da Nang is located right in the busy tourist street but with a very affordable price,
-                     it will be a worthy choice for visitors when coming to this beautiful city. This place mainly serves Da Nang tourists 
-                    with families because when renting a whole apartment, the price is much cheaper, maybe less than 18 people a day.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
-                    data-room-address="07 Ha Dat. Phuoc My Ward, Son Tra District, Da Nang City" data-room-guests="2"
-                    data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blog.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Bamboo Homestay"
-                    data-room-address="07 Ha Dat. Phuoc My Ward, Son Tra District, Da Nang City" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
-                </button>
+                    it will be a worthy choice for visitors when coming to this beautiful city. This place mainly serves Da Nang tourists 
+                   with families because when renting a whole apartment, the price is much cheaper, maybe less than 18 people a day.</p>
+                   <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
+                   data-room-address="07 Ha Dat. Phuoc My Ward, Son Tra District, Da Nang City" data-room-guests="2"
+                   data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                   <a href="room19.html">Room information</a>
+                   </button>
+               <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Bamboo Homestay"
+                   data-room-address="07 Ha Dat. Phuoc My Ward, Son Tra District, Da Nang City" data-room-guests="2">Set room</a>
+               </button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -428,6 +476,9 @@
                 <h2 class="text-xl font-bold mb-2">D-Green Hostel Danang </h2>
                 <p class="text-black-600 mb-2">Addres: 37 Mai Di, Hai Chau District, City. Danang.</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 1.400.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 80 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600">In general, the rooms here use simple wood materials with warm-toned bedding. In addition, the 
                     facility always ensures that all basic amenities are available in each room.</p>
@@ -436,7 +487,7 @@
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
                     <a href="/HTML/blog.html">Room information</a>
                     </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="D-Green Hostel Danang"
+                <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="D-Green Hostel Danang"
                     data-room-address="37 Mai Di, Hai Chau District, City. Danang." data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
                 </button>
             </div>
@@ -447,18 +498,21 @@
                 <h2 class="text-xl font-bold mb-2">Crazy Camp Homestay</h2>
                 <p class="text-black-600 mb-2">Addres: Hoa Trung village, Hoa Ninh commune, Hoa Vang district, Da Nang city.</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 20 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> With a geographical location 25km away from the city center, this will be an experiential tourist destination for
-                     those who want to be in harmony with nature. When choosing this address, it will be difficult for you
-                      to move to other tourist areas because the distance is quite far.</p>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Crazy Camp Homestay"
-                data-room-address="Hoa Trung village, Hoa Ninh commune, Hoa Vang district, Da Nang city." data-room-guests="2"
-                data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                <a href="/HTML/blogdetail21.html">Room information</a>
-                </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Crazy Camp Homestay"
-                    data-room-address=" Hoa Trung village, Hoa Ninh commune, Hoa Vang district, Da Nang city." data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
-                </button>
+                    those who want to be in harmony with nature. When choosing this address, it will be difficult for you
+                     to move to other tourist areas because the distance is quite far.</p>
+               <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Crazy Camp Homestay"
+               data-room-address="Hoa Trung village, Hoa Ninh commune, Hoa Vang district, Da Nang city." data-room-guests="2"
+               data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+               <a href="room21.html">Room information</a>
+               </button>
+               <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm " data-room-name="Crazy Camp Homestay"
+                   data-room-address=" Hoa Trung village, Hoa Ninh commune, Hoa Vang district, Da Nang city." data-room-guests="2">Set room</a>
+               </button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -466,17 +520,20 @@
                 <h2 class="text-xl font-bold mb-2"> Homestay Sea Kite Danang</h2>
                 <p class="text-black-600 mb-2">Addres: Lot 21, An Thuong 32, My An ward, Ngu Hanh Son district, Da Nang.</p>
                 <p class="text-black-600 mb-2">Amount of people: 2</p>
+                <p class="text-black-600 mb-2">Room cost: 2.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 500.000 VND</p>
                 <h3>Describe:</h3>
                 <p class="text-black-600"> Homestay offers rooms and suites with air conditioning and free Wi-Fi. The front desk is always on duty 24/24 to serve
-                     all the needs of customers and a shared kitchen for everyone. Cheap price only about 400k / night.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay Sea Kite Danang"
-                    data-room-address="Lot 21, An Thuong 32, My An ward, Ngu Hanh Son district, Da Nang." data-room-guests="2"
-                    data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blogdetail22.html">Room information</a>
-                    </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Homestay Sea Kite Danang"
-                    data-room-address=" Lot 21, An Thuong 32, My An ward, Ngu Hanh Son district, Da Nang." data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
-                </button>
+                    all the needs of customers and a shared kitchen for everyone. Cheap price only about 400k / night.</p>
+                   <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay Sea Kite Danang"
+                   data-room-address="Lot 21, An Thuong 32, My An ward, Ngu Hanh Son district, Da Nang." data-room-guests="2"
+                   data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
+                   <a href="room22.html">Room information</a>
+                   </button>
+               <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Homestay Sea Kite Danang"
+                   data-room-address=" Lot 21, An Thuong 32, My An ward, Ngu Hanh Son district, Da Nang." data-room-guests="2"> Set room</a>
+               </button>
             </div>
 
             <div class="bg-white rounded-lg shadow p-4">
@@ -484,15 +541,21 @@
                 <h2 class="text-xl font-bold mb-2">Dunu Homestay Da Nang</h2>
                 <p class="text-black-600 mb-2">Addres:k41/19 Mai Hac De, An Hai Tay, Son Tra, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 1-6</p>
+                <p class="text-black-600 mb-2">Room cost: 4.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 40 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 1.000.000 VND</p>
                 <h3>Describe:</h3>
-                <p class="text-black-600"> DuNu Homestay Danang has 2 types of dorm rooms 10, 1 room 14 and 1 room 6 for women. Cheap price only from 80k - 15k/night. Each bed is very spacious, with curtains to ensure privacy. In addition, the guesthouse also prepares 2 types of blankets for the 2 seasons of Da Nang.</p>
+                <p class="text-black-600"> Hoa An home is located at 76/10 Ha Bong, Phuoc My, Son Tra, Da Nang near My
+                    Khue and
+                    Pham Van Dong beaches.</p>
+                    <p class="text-black-600"> DuNu Homestay Danang has 2 types of dorm rooms 10, 1 room 14 and 1 room 6 for women. Cheap price only from 80k - 15k/night. Each bed is very spacious, with curtains to ensure privacy. In addition, the guesthouse also prepares 2 types of blankets for the 2 seasons of Da Nang.</p>
                     <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Dunu Homestay Da Nang"
                     data-room-address="k41/19 Mai Hac De, An Hai Tay, Son Tra, Da Nang" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blogdetail23.html">Room information</a>
+                    <a href="room23.html">Room information</a>
                     </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Dunu Homestay Da Nang"
-                    data-room-address="k41/19 Mai Hac De, An Hai Tay, Son Tra, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Dunu Homestay Da Nang"
+                    data-room-address="k41/19 Mai Hac De, An Hai Tay, Son Tra, Da Nang" data-room-guests="2"> Set room</a>
                 </button>
             </div>
 
@@ -501,21 +564,211 @@
                 <h2 class="text-xl font-bold mb-2">Little Flower Homestay Da Nang</h2>
                 <p class="text-black-600 mb-2">Addres:72 Hoang Duc Luong, An Hai Bac, Son Tra, Da Nang</p>
                 <p class="text-black-600 mb-2">Amount of people: 2-4</p>  
-                <h3>Describe:</h3> 
-                <p class="text-black-600">Little Flower Homestay is located less than 2 minutes walk from the Han River, designed in a classic Western style filled with flowers and leaves, voted by young people as one of the most worth checking-in homestays in Da Nang.</p>
+                <p class="text-black-600 mb-2">Room cost: 3.000.000 VND</p>
+                <p class="text-black-600 mb-2">Room area: 30 m2</p>
+                <p class="text-black-600 mb-2">Deposit: 700.000 VND</p>
+                <h3>Describe:</h3>
+                <p class="text-black-600"> Ris Hotel is located at 36 Phuoc Truong 15 .
+                    Family room: 2 beds 1.4*2 m (4 guests)</p>
+                    <p class="text-black-600">Little Flower Homestay is located less than 2 minutes walk from the Han River, designed in a classic Western style filled with flowers and leaves, voted by young people as one of the most worth checking-in homestays in Da Nang.</p>
                     <button class="bg-blue-500 text-white px-4 py-2 rounded" data-room-name="Homestay A"
                     data-room-address="72 Hoang Duc Luong, An Hai Bac, Son Tra, Da Nang" data-room-guests="2"
                     data-room-info="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-                    <a href="/HTML/blogdetail24.html">Room information</a>
+                    <a href="room24.html">Room information</a>
                     </button>
-                <button class="bg-green-500 text-white px-4 py-2 rounded" data-room-name="Little Flower Homestay Da Nang"
-                    data-room-address="72 Hoang Duc Luong, An Hai Bac, Son Tra, Da Nang" data-room-guests="2"> <a href="/HTML/room information.html">Set room</a>
+                <button class="bg-green-500 text-white px-4 py-2 rounded bookingromm" data-room-name="Little Flower Homestay Da Nang"
+                    data-room-address="72 Hoang Duc Luong, An Hai Bac, Son Tra, Da Nang" data-room-guests="2">Set room</a>
                 </button>
             </div>
         </div>
-        
     </div>
+
+    <div class="modal js-modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <div class="modal__booking--info">
+                <div class="booking__info--room">
+                    <div class="room__info">
+                        <div class="room__icon">
+                            <div class="room__icon--info">
+                                <i class="fa-solid fa-house"></i>
+                            </div>
+                            <span class="room__icon--title">Room information</span>
+                        </div>
+                        <div class="room__content">
+                            <div class="room__content--info">
+                                <span class="content--info">
+                                    Room Rates
+                                </span>
+                                <span class="content--price roomcost">
+                                    5.000.000 VND
+                                </span>
+                            </div>
+                            <div class="room__content--info">
+                                <span class="content--info">
+                                    Acreage
+                                </span>
+                                <span class="content--price room-area">
+                                    20 Square meters
+                            </div>
+                            <div class="room__content--info">
+                                <span class="content--info">
+                                    Deposit
+                                </span>
+                                <span class="content--price room-Deposit">
+                                    3.000.000 VND
+                                </span>
+                            </div>
+                            <div class="room__content--info">
+                                <span class="content--info">
+                                    Amount of people
+                                </span>
+                                <span class="content--price amountOfpeople">
+                                    4 man or woman
+                                </span>
+                            </div>
+                        </div>
+                        <div class="room__status">
+                            <span class="room__status--info">Status</span>
+                            <span class="room__status--content">There are rooms available</span>
+                        </div>
+                        <div class="room__address">
+                            <div class="room__address--info">Address</div>
+                            <div class="room__address--content">125/Xo Viet Nghe Tinh, Quan Hai Chau, Tp Da Nang</div>
+                        </div>
+                        <div class="roon__utility">
+                            <div class="room__icon utility">
+                                <div class="room__icon--info">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <span class="room__icon--title">Utilities</span>
+                            </div>
+                            <div class="utility__info">
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-tv"></i>
+                                    </div>
+                                    <span class="utility-name">Ti vi</span>
+                                </div>
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-toilet"></i>
+                                    </div>
+                                    <span class="utility-name">WC</span>
+                                </div>
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-car"></i>
+                                    </div>
+                                    <span class="utility-name">Parking</span>
+                                </div>
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-wifi"></i>
+                                    </div>
+                                    <span class="utility-name">Wifi</span>
+                                </div>
+                            </div>
+                            <div class="utility__info">
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-clock"></i>
+                                    </div>
+                                    <span class="utility-name">watch</span>
+                                </div>
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-house-chimney-window"></i>
+                                    </div>
+                                    <span class="utility-name">Window</span>
+                                </div>
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-bed"></i>
+                                    </div>
+                                    <span class="utility-name">Bed</span>
+                                </div>
+                                <div class="room__utility-info">
+                                    <div class="utility-info-icon">
+                                        <i class="fa-solid fa-spa"></i>
+                                    </div>
+                                    <span class="utility-name">Spa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking__info--owner">
+                    <div class="booking__info--user">
+                        <div class="room__icon booking__info--icon">
+                            <div class="room__icon--info">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <span class="room__icon--title">Room owner information</span>
+                        </div>
+                        <div class="info__owner--content">
+
+                            <div class="infor--owner">
+                                <span class="info-sdt">SDT:0356469917</span>
+                                <span class="info-days">Ngày đăng: 14-5-2023</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking__info--price">
+                        <span class="info--price">500
+                        </span>
+                        <div class="info--since">
+                            <span class="info--since--title">Since</span>
+                            <input type="text" placeholder="27/04/2023" class="info--since--content">
+                            </input>
+                            <div class="info--since--icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                        </div>
+                        <div class="info--expiration">
+                            <span class="info--since--title">To Date</span>
+                            <input type="text" placeholder="27/04/2023" class="info--since--content">
+                            <div class="info--expiration--icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+                            </input>
+                        </div>
+                        <button class="booking__buy">
+                            <a href="/HTML/payment.html" class="booking__buy--text">Booking Now</a>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal__booking--out js-close-modal">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </div>
+            <div class="toast open">
+                <div class="toast__modal">
+                    <div class="toast__icon">
+                        <div class="toast__icon-boder">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">Success</h3>
+                        <p class="toast__msg">Set successfully</p>
+                    </div>
+                    <div class="toast__exit">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="searchResultsContainer" class="bg-white p-4 rounded shadow">
+            <!-- Kết quả tìm kiếm sẽ được hiển thị ở đây -->
+        </div>
+    </div>
+    
+    
     <script src="/assets/js/search.js"></script>
+    <script src="/assets/js/inforoom.js"></script>
 </body>
 
 </html>
