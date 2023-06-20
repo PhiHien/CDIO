@@ -51,4 +51,39 @@ var nameuser = document.querySelector('.username');
 if (nameuser !== null) {
   nameuser.innerText = username;
 }
+
+var btnSetrooms = document.querySelectorAll('.bookingromm');
+var modal = document.querySelector('.js-modal');
+var closeModal = document.querySelector('.js-close-modal');
+var bodyModal = document.querySelector('.modal__body');
+// var btna = document.querySelector('.bookingromma');
+
+// btna.addEventListener('click', function() {
+//   modal.classList.add('open');
+
+// })
+btnSetrooms.forEach(function (btnSetroom) {
+  btnSetroom.onclick = function() {
+    modal.classList.add('open');
+  }
+})
+
+closeModal.onclick = function() {
+  modal.classList.remove('open');
+}
+
+modal.addEventListener('click',function() {
+  modal.classList.remove('open');
+})
+
+bodyModal.addEventListener('click',function(e) {
+  e.stopPropagation();
+})
+
+//gắn tên user tương ứng
+var username = localStorage.getItem("username");
+var nameuser = document.querySelector('.username');
+if (nameuser !== null) {
+  nameuser.innerText = username;
+}
       
