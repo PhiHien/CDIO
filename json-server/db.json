@@ -8,18 +8,18 @@
       "password": "123"
     },
     {
-      "fullname": "nguyen phi hien",
-      "username": "Phi Hien",
-      "email": "phihien1011@gmail.com",
-      "password": "1111",
-      "id": 17
-    },
-    {
       "fullname": "le xuan tan",
       "username": "Tan Lee",
       "email": "lexuantan@gmail.com",
       "password": "1111",
       "id": 18
+    },
+    {
+      "fullname": "nguyen phi hien",
+      "username": "PhiHien",
+      "email": "phihien1011@gmail.com",
+      "password": "11111",
+      "id": 19
     }
   ],
   "i4Customer": [
@@ -31,6 +31,15 @@
       "CheckinDate": "2023-06-20",
       "CheckoutDate": "2023-06-22",
       "id": 8
+    },
+    {
+      "UserName": "White",
+      "Phone": "+84971010073",
+      "RoomType": "deluxe",
+      "numberOfPeople": "2",
+      "CheckinDate": "2023-06-22",
+      "CheckoutDate": "2023-06-30",
+      "id": 9
     }
   ]
 }

@@ -737,24 +737,16 @@
                     <div class="booking__info--price">
                         <span class="info--price">500
                         </span>
-                        <div class="info--since">
-                            <span class="info--since--title">Since</span>
-                            <input type="text" placeholder="27/04/2023" class="info--since--content">
-                            </input>
-                            <div class="info--since--icon">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                        </div>
-                        <div class="info--expiration">
-                            <span class="info--since--title">To Date</span>
-                            <input type="text" placeholder="27/04/2023" class="info--since--content">
-                            <div class="info--expiration--icon">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                            </input>
-                        </div>
+                        <div class="text-black-500">
+                            <label for="checkInDate" class="font-bold block">Check-in Date</label>
+                            <input type="date" id="checkInDate" name="checkInDate" class="border border-gray-300 p-2 rounded-md w-full block mb-4">
+                            
+                            <label for="checkOutDate" class="font-bold block">Check-out Date</label>
+                            <input type="date" id="checkOutDate" name="checkOutDate" class="border border-gray-300 p-2 rounded-md w-full block mb-4">
+                            
+
                         <button class="booking__buy">
-                            <a href="/HTML/payment.html" class="booking__buy--text">Booking Now</a>
+                           <a href="/HTML/payment.html" class="booking__buy--text block border border-green-500 text-white">Booking Now</a>
                         </button>
                     </div>
                 </div>
