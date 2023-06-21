@@ -29,8 +29,8 @@
       for (var i = 0; i < roomCards.length; i++) {
         var roomCard = roomCards[i];
         var roomName = roomCard.querySelector("h2").textContent.toLowerCase();
-        var roomAddress = roomCard.querySelector("p:nth-child(3)").textContent.toLowerCase();
-        var roomGuests = parseInt(roomCard.querySelector("p:nth-child(4)").textContent);
+        var roomAddress = roomCard.querySelector("p:nth-child(4)").textContent.toLowerCase();
+        var roomGuests = parseInt(roomCard.querySelector("p:nth-child(3)").textContent);
         
         if ((roomName.includes(keyword) || roomGuests >= numberOfGuests) && (location === "" || roomAddress.includes(location))) {
           matchedResults.push(roomCard.outerHTML);
