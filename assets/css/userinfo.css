@@ -178,6 +178,14 @@ footer {
     margin-right: 30px;
 }
 
+.col-content {
+    text-decoration: none;
+}
+
+.title--footer {
+    list-style: none;
+}
+
 .col:last-child {
     margin-right: 0;
 }
@@ -206,6 +214,9 @@ footer {
     border-radius: 50%;
 }
 
+.social-content a:hover {
+    background-color: #555;
+}
 .social-content a:hover {
     background-color: #555;
 }

@@ -85,3 +85,64 @@ html {
 .open {
     display: block;
 }
+footer {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.col-content {
+    text-decoration: none;
+}
+
+.title--footer {
+    list-style: none;
+}
+
+.col:last-child {
+    margin-right: 0;
+}
+
+.social-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.social-content li {
+    margin-right: 20px;
+}
+
+.social-content li:last-child {
+    margin-right: 0;
+}
+
+.social-content a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}
+
+.social-content a:hover {
+    background-color: #555;
+}

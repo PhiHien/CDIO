@@ -8,46 +8,18 @@
       "password": "123"
     },
     {
-      "fullname": "huynhvanquyn",
-      "username": "quyn",
-      "email": "huynhquyn11@gmail.com",
-      "password": "123",
-      "id": 2
-    },
-    {
-      "fullname": "huynhvanthuan",
-      "username": "thuan",
-      "email": "thuan@gmail.com",
-      "password": "123",
-      "id": 3
-    },
-    {
-      "fullname": "Dang Huu Ngoc",
-      "username": "Ngoc",
-      "email": "huungoc@gmail.com",
-      "password": "12345",
-      "id": 12
-    },
-    {
-      "fullname": "tran doan dinh long",
-      "username": "Long",
-      "email": "dinhlong@gmail.com",
-      "password": "1111",
-      "id": 15
-    },
-    {
-      "fullname": "nguyen quoc huy",
-      "username": "Huy",
-      "email": "quochuy@gmail.com",
-      "password": "12345",
-      "id": 16
-    },
-    {
       "fullname": "nguyen phi hien",
       "username": "Phi Hien",
       "email": "phihien1011@gmail.com",
       "password": "1111",
       "id": 17
+    },
+    {
+      "fullname": "le xuan tan",
+      "username": "Tan Lee",
+      "email": "lexuantan@gmail.com",
+      "password": "1111",
+      "id": 18
     }
   ],
   "i4Customer": [
@@ -59,24 +31,6 @@
       "CheckinDate": "2023-06-20",
       "CheckoutDate": "2023-06-22",
       "id": 8
-    },
-    {
-      "UserName": "White",
-      "Phone": "+84971010073",
-      "RoomType": "suite",
-      "numberOfPeople": "2",
-      "CheckinDate": "2023-06-20",
-      "CheckoutDate": "2023-06-22",
-      "id": 9
-    },
-    {
-      "UserName": "White",
-      "Phone": "",
-      "RoomType": "standard",
-      "numberOfPeople": "",
-      "CheckinDate": "",
-      "CheckoutDate": "",
-      "id": 10
     }
   ]
 }

@@ -14,37 +14,37 @@
     
         
     document.getElementById("searchForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-      
-        var keyword = document.getElementById("keywordInput").value.toLowerCase();
-        var location = document.getElementById("locationInput").value.toLowerCase();
-        var numberOfGuests = parseInt(location); // Chuyển đổi số người từ chuỗi thành số nguyên
-      
-        var searchResultsContainer = document.getElementById("searchResultsContainer");
-        searchResultsContainer.innerHTML = ""; // Xóa kết quả tìm kiếm trước đó
-      
-        var roomCards = document.querySelectorAll("#roomContainer > div");
-        var matchedResults = [];
-      
-        for (var i = 0; i < roomCards.length; i++) {
-          var roomCard = roomCards[i];
-          var roomName = roomCard.querySelector("h2").textContent.toLowerCase();
-          var roomAddress = roomCard.querySelector("p:nth-child(3)").textContent.toLowerCase();
-          var roomGuests = parseInt(roomCard.querySelector("p:nth-child(4)").textContent); // Chuyển đổi số người từ chuỗi thành số nguyên
-      
-          if ((roomName.includes(keyword) || roomGuests === numberOfGuests) && (location === "" || roomAddress.includes(location))) {
-            matchedResults.push(roomCard.outerHTML);
-          } else {
-            roomCard.classList.add("hidden"); // Ẩn các phần tử không tương ứng
-          }
-        }
-      
-        if (matchedResults.length > 0) {
-          searchResultsContainer.innerHTML = matchedResults.join("");
+      event.preventDefault();
+    
+      var keyword = document.getElementById("keywordInput").value.toLowerCase();
+      var location = document.getElementById("locationInput").value.toLowerCase();
+      var numberOfGuests = parseInt(location);
+    
+      var searchResultsContainer = document.getElementById("searchResultsContainer");
+      searchResultsContainer.innerHTML = "";
+    
+      var roomCards = document.querySelectorAll("#roomContainer > div");
+      var matchedResults = [];
+    
+      for (var i = 0; i < roomCards.length; i++) {
+        var roomCard = roomCards[i];
+        var roomName = roomCard.querySelector("h2").textContent.toLowerCase();
+        var roomAddress = roomCard.querySelector("p:nth-child(3)").textContent.toLowerCase();
+        var roomGuests = parseInt(roomCard.querySelector("p:nth-child(4)").textContent);
+        
+        if ((roomName.includes(keyword) || roomGuests >= numberOfGuests) && (location === "" || roomAddress.includes(location))) {
+          matchedResults.push(roomCard.outerHTML);
         } else {
-          searchResultsContainer.innerHTML = "Không có kết quả tìm kiếm.";
+          roomCard.classList.add("hidden");
         }
-      });
+      }
+    
+      if (matchedResults.length > 0) {
+        searchResultsContainer.innerHTML = matchedResults.join("");
+      } else {
+        searchResultsContainer.innerHTML = "Không có kết quả tìm kiếm.";
+      }
+    });
 
 var username = localStorage.getItem("username");
 var nameuser = document.querySelector('.username');
