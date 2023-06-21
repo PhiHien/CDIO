@@ -1,86 +1,87 @@
-
 var username = localStorage.getItem("username");
-var nameuser = document.querySelector('.username');
-if (nameuser !== null) {
-nameuser.innerText = username;
-}
+        var nameuser = document.querySelector('.username');
+        if (nameuser !== null) {
+        nameuser.innerText = username;
+        }
 
-//userinfo
+        //userinfo
 
-const infovalue = document.querySelector('.edit-info-content');
-const infouser = document.querySelector('.info-user');
-const edit = document.querySelector('.edit-info');
-const update = document.querySelector('.update-content');
+        const infovalue = document.querySelector('.edit-info-content');
+        const infouser = document.querySelector('.info-user');
+        const edit = document.querySelector('.edit-info');
+        const update = document.querySelector('.update-content');
 
-edit.onclick = function() {
-    infouser.classList.add('hiden');
-    infovalue.classList.add('open');
-}
+        const name1 = document.querySelector(".name span");
+        const fullname1 = document.querySelector(".fullname span");
+        const email1 = document.querySelector(".email span");
+        const phone1 = document.querySelector(".phone span");
+        const address1 = document.querySelector(".address span");
+        const date1 = document.querySelector(".birthday span");
+        const gender1 = document.querySelector(".gender span")
+        
+        edit.onclick = function() {
+            infouser.classList.add('hiden');
+            infovalue.classList.add('open');
+        }
 
-function editinfo() {
-    var name = document.querySelector('input[name="name"]').value;
-    var fullname = document.querySelector('input[name="fullname"]').value;
-    var email = document.querySelector('input[name="email"]').value;
-    var phone = document.querySelector('input[name="phone"]').value;
-    var address = document.querySelector('input[name="address"]').value;
-    var date = document.querySelector('input[name="date"]').value;
-    var gender = document.querySelector('input[name="gender"]').value;
-    
-    const name1 = document.querySelector(".name span");
-    const fullname1 = document.querySelector(".fullname span");
-    const email1 = document.querySelector(".email span");
-    const phone1 = document.querySelector(".phone span");
-    const address1 = document.querySelector(".address span");
-    const date1 = document.querySelector(".birthday span");
-    const gender1 = document.querySelector(".gender span");
+        function editinfo() {
 
-    name1.innerText = name;
-    fullname1.innerText = fullname;
-    email1.innerText = email;
-    phone1.innerText = phone;
-    address1.innerText = address;
-    date1.innerText = date;
-    gender1.innerText = gender;
+            var name = document.querySelector('input[name="name"]').value;
+            var fullname = document.querySelector('input[name="fullname"]').value;
+            var email = document.querySelector('input[name="email"]').value;
+            var phone = document.querySelector('input[name="phone"]').value;
+            var address = document.querySelector('input[name="address"]').value;
+            var date = document.querySelector('input[name="date"]').value;
+            var gender = document.querySelector('input[name="gender"]').value;
 
-}
-    update.addEventListener('click', () => {
-        editinfo();
-        alert('lưu thành công');
-        infovalue.classList.remove('open');
-        infouser.classList.remove('hiden');
-    })
-    document.querySelector('.btn-submit').addEventListener('click', function (event) {
-event.preventDefault(); // Prevent form submission
+            //kiểm tra xem có trường nào trống không
+            if (!name || !fullname || !email || !phone || !address || !date || !gender) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            const name1 = document.querySelector(".name span");
+            const fullname1 = document.querySelector(".fullname span");
+            const email1 = document.querySelector(".email span");
+            const phone1 = document.querySelector(".phone span");
+            const address1 = document.querySelector(".address span");
+            const date1 = document.querySelector(".birthday span");
+            const gender1 = document.querySelector(".gender span");
 
-// Get the entered values from the form
-var name = document.querySelector('input[name="name"]').value;
-var fullName = document.querySelector('input[name="fullname"]').value;
-var email = document.querySelector('input[name="email"]').value;
-var phone = document.querySelector('input[name="phone"]').value;
-var address = document.querySelector('input[name="address"]').value;
-var date = document.querySelector('input[name="date"]').value;
-var gender = document.querySelector('input[name="gender"]').value;
+            localStorage.setItem("name", name);
+            localStorage.setItem("fullname", fullname);
+            localStorage.setItem("email", email);
+            localStorage.setItem("phone", phone);
+            localStorage.setItem("address", address);
+            localStorage.setItem("date", date);
+            localStorage.setItem("gender", gender);
 
-if (name === '' || fullName === '' || email === '' || phone === '' || address === '' || date === '' || gender === '') {
-    alert('Please fill in all required fields.');
-    return;
-}
-// Update the user information in the displayed content
-const name1 = document.querySelector(".name span");
-const fullname1 = document.querySelector(".fullname span");
-const email1 = document.querySelector(".email span");
-const phone1 = document.querySelector(".phone span");
-const address1 = document.querySelector(".address span");
-const date1 = document.querySelector(".birthday span");
-const gender1 = document.querySelector(".gender span");
+            name1.innerText = localStorage.getItem("name");
+            console.log(name1.innerText = localStorage.getItem("name"));
+            fullname1.innerText = localStorage.getItem("fullname");
+            email1.innerText = localStorage.getItem("email");
+            phone1.innerText = localStorage.getItem("phone");
+            address1.innerText = localStorage.getItem("address");
+            date1.innerText = localStorage.getItem("date");
+            gender1.innerText = localStorage.getItem("gender");
+            alert('lưu thành công');
 
-name1.innerText = name;
-fullname1.innerText = fullName;
-email1.innerText = email;
-phone1.innerText = phone;
-address1.innerText = address;
-date1.innerText = date;
-gender1.innerText = gender;
+           
+        }
+        update.addEventListener('click', () => {
+            editinfo();
+            infovalue.classList.remove('open');
+            infouser.classList.remove('hiden');
+        })
 
-alert('User information updated successfully!');
-});
+        window.addEventListener('load', function() {
+                name1.innerText = localStorage.getItem("name");
+                console.log(name1.innerText = localStorage.getItem("name"));
+
+                fullname1.innerText = localStorage.getItem("fullname");
+                email1.innerText = localStorage.getItem("email");
+                phone1.innerText = localStorage.getItem("phone");
+                address1.innerText = localStorage.getItem("address");
+                date1.innerText = localStorage.getItem("date");
+                gender1.innerText = localStorage.getItem("gender");
+        });
