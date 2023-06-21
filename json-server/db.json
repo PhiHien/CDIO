@@ -41,6 +41,13 @@
       "email": "quochuy@gmail.com",
       "password": "12345",
       "id": 16
+    },
+    {
+      "fullname": "nguyen phi hien",
+      "username": "Phi Hien",
+      "email": "phihien1011@gmail.com",
+      "password": "1111",
+      "id": 17
     }
   ],
   "i4Customer": [

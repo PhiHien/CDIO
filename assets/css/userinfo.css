@@ -209,3 +209,34 @@ footer {
 .social-content a:hover {
     background-color: #555;
 }
+.infoAll-room {
+    margin-bottom: 15px;
+}
+
+.edit-info-content,
+.info-user {
+    margin-top: 20px;
+}
+
+.edit-info-content {
+    display: none;
+}
+
+.open {
+    display: block;
+}
+
+.hiden {
+    display: none;
+}
+.element.style {
+    
+    background-color: #48bb78;
+    color: #ffffff;
+}
+.btn-submit {
+    background-color: #48bb78;
+    color: #ffffff;
+    width: 200px;
+    height: 30px;
+}
